@@ -44,6 +44,12 @@ public class SolarApplicationTest {
     }
 
     @Test
+    void getMoonTest() {
+        assertEquals(earth, sun.getMoon("earth"));
+        assertEquals(null, sun.getMoon("jupiter"));
+    }
+
+    @Test
     @DisplayName("Display from earth to mars")
     void distanceTest() {
         //distance have 3 features, one to itself =0

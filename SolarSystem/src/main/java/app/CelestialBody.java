@@ -44,4 +44,8 @@ public class CelestialBody {
     public Position getPosition() {
         return position;
     }
+
+    public CelestialBody getMoon(String name) {
+        return moons.get(name);
+    }
 }
