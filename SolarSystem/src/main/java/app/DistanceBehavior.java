@@ -48,7 +48,7 @@ public class DistanceBehavior {
         ArrayList<CelestialBody> from = findPath(fromCB);
         ArrayList<CelestialBody> to = findPath(toCB);
         CelestialBody common = null;
-        for (int i = 1; i < Math.max(from.size(), to.size()); i++) {
+        for (int i = 1; i <= Math.min(from.size(), to.size()); i++) {
             if (from.get(from.size() - i) == to.get(to.size() - i)) {
                 common = from.get(from.size() - i);
             } else break;
