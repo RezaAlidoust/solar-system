@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class SolarApplicationTest {
     private CelestialBody sun;
@@ -45,8 +45,17 @@ public class SolarApplicationTest {
 
     @Test
     void getMoonTest() {
+        assertThrows(Exception.class, () -> {
+            sun.getMoon("jupiter");
+        });
+    }
+
+    @Test
+    void getMoonTest1() throws Exception {
         assertEquals(earth, sun.getMoon("earth"));
-        assertEquals(null, sun.getMoon("jupiter"));
+        assertDoesNotThrow(() -> {
+            sun.getMoon("earth");
+        });
     }
 
     @Test
