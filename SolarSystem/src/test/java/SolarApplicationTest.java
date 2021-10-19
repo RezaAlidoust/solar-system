@@ -70,6 +70,9 @@ public class SolarApplicationTest {
         assertEquals(0, sun.distanceTo(sun));
         assertEquals(1, phobos.distanceTo(titan));
 
+        // It's another way to use
+        assertEquals(6, sun.getMoon("earth").distanceTo(sun));
+
         assertDoesNotThrow(() -> {
             earth.distanceTo(sun);
         });
