@@ -3,10 +3,10 @@ package app;
 import java.util.ArrayList;
 
 public class DistanceBehavior {
-    public static double distance(CelestialBody from, CelestialBody to) {
+    public static double distance(CelestialBody from, CelestialBody to) throws Exception {
         CelestialBody common = findFirstCommon(from, to);
         if (common == null) {
-            return -1;
+            throw new Exception("there is no common node");
         }
         double fromX = from.getPosition().getX();
         double fromY = from.getPosition().getY();

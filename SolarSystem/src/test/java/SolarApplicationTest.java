@@ -60,7 +60,7 @@ public class SolarApplicationTest {
 
     @Test
     @DisplayName("Display from earth to mars")
-    void distanceTest() {
+    void distanceTest() throws Exception {
         //distance have 3 features, one to itself =0
         //distance must always be positive
         //distance a to b must be equal b to a
@@ -69,5 +69,9 @@ public class SolarApplicationTest {
         assertEquals(0, earth.distanceTo(earth));
         assertEquals(0, sun.distanceTo(sun));
         assertEquals(1, phobos.distanceTo(titan));
+
+        assertDoesNotThrow(() -> {
+            earth.distanceTo(sun);
+        });
     }
 }

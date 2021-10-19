@@ -37,7 +37,7 @@ public class CelestialBody {
     }
 
     //Its like strategy pattern, because distance can change in future. for example add z to position or another distance algorithm
-    public double distanceTo(CelestialBody celestialBody) {
+    public double distanceTo(CelestialBody celestialBody) throws Exception {
         return DistanceBehavior.distance(this, celestialBody);
     }
 
