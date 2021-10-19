@@ -44,11 +44,7 @@ public class CelestialBody {
     public Position getPosition() {
         return position;
     }
-
-    /**
-     * @param name
-     * @return
-     */
+    
     public CelestialBody getMoon(String name) throws Exception {
         if (moons.get(name) == null)
             throw new Exception("there is no celestial object with this name!");

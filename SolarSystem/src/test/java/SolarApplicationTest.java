@@ -44,14 +44,15 @@ public class SolarApplicationTest {
     }
 
     @Test
-    void getMoonTest() {
+    @DisplayName("Test exception in getting moon")
+    void getMoonTest1() {
         assertThrows(Exception.class, () -> {
             sun.getMoon("jupiter");
         });
     }
 
     @Test
-    void getMoonTest1() throws Exception {
+    void getMoonTest() throws Exception {
         assertEquals(earth, sun.getMoon("earth"));
         assertDoesNotThrow(() -> {
             sun.getMoon("earth");
@@ -69,10 +70,22 @@ public class SolarApplicationTest {
         assertEquals(0, earth.distanceTo(earth));
         assertEquals(0, sun.distanceTo(sun));
         assertEquals(1, phobos.distanceTo(titan));
+    }
 
+    @Test
+    @DisplayName("calculate distance in another way")
+    void distanceTest1() throws Exception {
         // It's another way to use
         assertEquals(6, sun.getMoon("earth").distanceTo(sun));
 
+        assertDoesNotThrow(() -> {
+            earth.distanceTo(sun);
+        });
+    }
+
+    @Test
+    @DisplayName("Test no exception in distance")
+    void distanceTest2() {
         assertDoesNotThrow(() -> {
             earth.distanceTo(sun);
         });
