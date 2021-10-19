@@ -59,7 +59,7 @@ public class SolarApplicationTest {
     }
 
     @Test
-    @DisplayName("Display from earth to mars")
+    @DisplayName("Display distances")
     void distanceTest() throws Exception {
         //distance have 3 features, one to itself =0
         //distance must always be positive
