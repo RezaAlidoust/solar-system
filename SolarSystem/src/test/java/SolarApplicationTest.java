@@ -77,4 +77,11 @@ public class SolarApplicationTest {
             earth.distanceTo(sun);
         });
     }
+
+    @Test
+    void distanceExceptionTest() {
+        assertThrows(Exception.class, () -> {
+            sun.getMoon("jupiter").distanceTo(sun);
+        });
+    }
 }
